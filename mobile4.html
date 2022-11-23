@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Nowlio Core</title>
+    <meta name="robots" content="noindex,nofollow" />
+    <style>
+        :root {
+            --core-toolbar-height: 60px;
+            --core-iframe-container-padding: 24px;
+        }
+
+        html {
+            min-height: 100%;
+            height: 100%;
+        }
+
+        body {
+            min-height: 100%;
+            height: 100%;
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            background: gray;
+            border: 1px solid red;
+        }
+
+        #core-root-container {
+            display: block;
+            height: 100%;
+            background-color: lightcyan;
+            box-sizing: border-box;
+        }
+
+        #core-toolbar {
+            position: relative;
+            display: block;
+            height: var(--core-toolbar-height);
+            background-color: aquamarine;
+            box-sizing: border-box;
+        }
+
+        #core-iframe-container {
+            position: relative;
+            display: flex;
+            flex-wrap: nowrap;
+            height: calc(100% - var(--core-toolbar-height));
+            overflow-y: hidden;
+            overflow-x: hidden;
+            box-sizing: border-box;
+            padding: var(--core-iframe-container-padding);
+        }
+
+        #core-iframe-1 {
+            width: 50%;
+            height: 100%;
+            box-sizing: border-box;
+            border: none;
+        }
+
+        #core-iframe-2 {
+            width: 50%;
+            height: 100%;
+            box-sizing: border-box;
+            border: none;
+        }
+
+        #core-iframe-splitter {
+            width: 24px;
+        }
+
+        @media only screen and (max-width: 720px) {
+            #core-iframe-1 {
+                width: 100%;
+            }
+
+            #core-iframe-2 {
+                width: 0;                
+            }
+
+            #core-iframe-splitter {
+                width: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="core-root-container">
+        <div id="core-toolbar"></div>
+        <div id="core-iframe-container">
+            <iframe id="core-iframe-1" src="https://dirk-hagen.github.io/dev/"></iframe>
+            <div id="core-iframe-splitter"></div>
+            <iframe id="core-iframe-2" src="https://dirk-hagen.github.io/dev/"></iframe>
+        </div>
+    </div>
+</body>
+
+</html>
